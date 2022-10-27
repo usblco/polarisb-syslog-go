@@ -9,7 +9,7 @@ import (
 func clientChannelListener(polarisbLogging *polarisb.LogSink) {
 	for logEntry := range polarisbLogging.Channel.SinkChannel {
 		if logEntry != nil {
-			fmt.Printf("Event Received | Event: %s | Message: %s | Actor: %s | MoreInfo: %s | Channel: %s\n", logEntry.Event, logEntry.Message, logEntry.Actor, logEntry.MoreInfo)
+			fmt.Printf("Event Received | Event: %s | Message: %s | Actor: %s | MoreInfo: %s \n", logEntry.Event, logEntry.Message, logEntry.Actor, logEntry.MoreInfo)
 			// Called to indicate that log entry has been processed
 			polarisbLogging.Channel.WaitGroup.Done()
 		}
